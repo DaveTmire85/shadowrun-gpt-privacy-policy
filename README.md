@@ -1,5 +1,4 @@
-
-#🛡️ MIRAGE PRIVACY POLICY
+# MIRAGE PRIVACY POLICY
 
 _Last Updated: 04/28/2025_
 
