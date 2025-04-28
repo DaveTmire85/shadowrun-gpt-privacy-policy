@@ -1,5 +1,5 @@
 
-# Mirage Privacy Policy
+🛡️ # Mirage Privacy Policy
 
 _Last Updated: 04/28/2025_
 
