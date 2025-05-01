@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "mirage_supabase_api",
+  "name_for_human": "Mirage Supabase API",
+  "description_for_model": "Provides mnemonic-scoped access to LoreVault, SessionVault, TerminalVault, and runstate APIs for persistent storytelling.",
+  "description_for_human": "Save and load immersive game state using your mnemonic. Memory sticks, runs live, and lore persists.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+      "url": "https://davetmire85.github.io/mirage_modular_framework-PUBLIC/openapi.yaml"
+  },
+  "logo_url": "https://davetmire85.github.io/mirage_modular_framework-PUBLIC/logo.png",
+  "contact_email": "davetmire85@mail.com",
+  "legal_info_url": "https://.github.io/mirage-plugin/MIRAGE_PRIVACY_POLICY_v3.4.md"
+}
