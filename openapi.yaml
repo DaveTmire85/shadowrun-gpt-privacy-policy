@@ -4,7 +4,7 @@ info:
   description: Plugin routes for Mirage to interact with Supabase data via mnemonic-scoped entries.
   version: 1.0.0
 servers:
-  - url: https://davetmire85.github.io/mirage_modular_framework-PUBLIC
+  - url: https://iqtmumwxozwymneaxwkf.supabase.co/rest/v1
     description: GitHub-hosted OpenAPI entry point for GPT validation only. Runtime calls use explicit Supabase endpoints.
 
 paths:
