@@ -4,7 +4,8 @@ info:
   description: Plugin routes for Mirage to interact with Supabase data via mnemonic-scoped entries.
   version: 1.0.0
 servers:
-  - url: https://iqtmumwxozwymneaxwkf.supabase.co/rest/v1
+  - url: https://davetmire85.github.io/mirage_modular_framework-PUBLIC
+
 paths:
   /lore:
     get:
