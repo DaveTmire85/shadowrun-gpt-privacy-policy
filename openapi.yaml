@@ -1,0 +1,175 @@
+openapi: 3.1.0
+info:
+  title: Mirage Modular Framework – Supabase API
+  description: Plugin routes for Mirage to interact with Supabase data via mnemonic-scoped entries.
+  version: 1.0.0
+servers:
+  - url: https://iqtmumwxozwymneaxwkf.supabase.co/rest/v1
+paths:
+  /lore:
+    get:
+      operationId: getLoreByMnemonic
+      summary: Get all lore entries for a mnemonic
+      parameters:
+        - name: mnemonic_owner_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Lore fetched
+    post:
+      operationId: postLoreEntry
+      summary: Save a lore entry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoreInput"
+      responses:
+        "201":
+          description: Lore created
+  /terminal_intro_nodes:
+    get:
+      operationId: getTerminalIntros
+      summary: Get terminal logs for a mnemonic
+      parameters:
+        - name: mnemonic_owner_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Terminal intros returned
+    post:
+      operationId: postTerminalIntro
+      summary: Save terminal intros
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TerminalInput"
+      responses:
+        "201":
+          description: Terminal entry created
+  /sessionvault:
+    get:
+      operationId: getSessionData
+      summary: Get sessions by mnemonic
+      parameters:
+        - name: mnemonic_owner_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Session data returned
+    post:
+      operationId: postSessionData
+      summary: Save sessionvault data
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - mnemonic_owner_id
+                - session_data
+              properties:
+                mnemonic_owner_id:
+                  type: string
+                session_data:
+                  type: object
+      responses:
+        "201":
+          description: Session saved
+  /session_runstate:
+    get:
+      operationId: getRunstate
+      summary: Get runstate for mnemonic
+      parameters:
+        - name: mnemonic_owner_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Runstate returned
+    post:
+      operationId: postRunstate
+      summary: Save current runstate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - mnemonic_owner_id
+                - runstate
+              properties:
+                mnemonic_owner_id:
+                  type: string
+                runstate:
+                  type: object
+      responses:
+        "201":
+          description: Runstate saved
+components:
+  schemas:
+    LoreInput:
+      type: object
+      required:
+        - title
+        - content
+        - mnemonic_owner_id
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        mnemonic_owner_id:
+          type: string
+    TerminalInput:
+      type: object
+      required:
+        - message
+        - mnemonic_owner_id
+      properties:
+        mnemonic_owner_id:
+          type: string
+        terminal_type:
+          type: string
+        message:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    SessionVaultInput:
+      type: object
+      required:
+        - mnemonic_owner_id
+        - session_data
+      properties:
+        mnemonic_owner_id:
+          type: string
+        session_data:
+          type: object
+    RunstateInput:
+      type: object
+      required:
+        - mnemonic_owner_id
+        - runstate
+      properties:
+        mnemonic_owner_id:
+          type: string
+        runstate:
+          type: object
