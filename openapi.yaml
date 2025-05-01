@@ -5,6 +5,7 @@ info:
   version: 1.0.0
 servers:
   - url: https://davetmire85.github.io/mirage_modular_framework-PUBLIC
+    description: GitHub-hosted OpenAPI entry point for GPT validation only. Runtime calls use explicit Supabase endpoints.
 
 paths:
   /lore:
