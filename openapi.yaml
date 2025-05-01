@@ -5,8 +5,7 @@ info:
   version: 1.0.0
 servers:
   - url: https://iqtmumwxozwymneaxwkf.supabase.co/rest/v1
-    description: GitHub-hosted OpenAPI entry point for GPT validation only. Runtime calls use explicit Supabase endpoints.
-
+    description: Primary Supabase REST endpoint for Mirage GPT plugin runtime.
 paths:
   /lore:
     get:
@@ -79,15 +78,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - mnemonic_owner_id
-                - session_data
-              properties:
-                mnemonic_owner_id:
-                  type: string
-                session_data:
-                  type: object
+              $ref: "#/components/schemas/SessionVaultInput"
       responses:
         "201":
           description: Session saved
@@ -112,15 +103,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - mnemonic_owner_id
-                - runstate
-              properties:
-                mnemonic_owner_id:
-                  type: string
-                runstate:
-                  type: object
+              $ref: "#/components/schemas/RunstateInput"
       responses:
         "201":
           description: Runstate saved
